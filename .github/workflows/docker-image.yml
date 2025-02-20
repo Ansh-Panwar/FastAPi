@@ -1,0 +1,18 @@
+name: Docker image build
+
+on: push
+    
+
+
+jobs:
+    build:
+
+        runs-on: ubuntu-latest
+
+        steps: 
+            - uses: actions/checkout@v1
+            - name: Build & Push Image
+              run: |
+                echo ${{ secrets.DOCKERTOKEN }} | docker login -u "ansh7212" --password-stdin
+                docker build -t ansh7212/fastapi:v1 .
+                docker push ansh7212/ansh7212:v1
