@@ -12,5 +12,5 @@ jobs:
       - name: Build & Push Docker Image
         run: |
           echo "${{ secrets.DOCKERTOKEN }}" | docker login -u "ansh7212" --password-stdin
-          docker build -t ansh7212/fastapi:v1 -f fastapi/Dockerfile .
+          docker build -t ansh7212/fastapi:v1 -f fastapi/Dockerfile ./fastapi
           docker push ansh7212/fastapi:v1
