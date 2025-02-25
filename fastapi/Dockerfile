@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
 COPY requirements.txt ./fastapi
-RUN python -m pip install -r requirements.txt
+RUN python -m pip install -r fastapi/requirements.txt
 
 WORKDIR /app
 COPY . /app
